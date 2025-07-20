@@ -1,0 +1,141 @@
+<ion-header>
+  <ion-toolbar style="--background: #dd1177;">
+    <ion-title>Beranda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Kartu Sambutan -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title style="color: #e91e63;">
+        Selamat Datang di Aplikasi Layanan Menail Salon
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        Aplikasi ini digunakan untuk pendataan appointment Anda yang ingin treatment ke Salon Menail.
+        Silakan isi data Anda melalui menu <strong>"Registrasi Appointment Layanan Menail Salon"</strong> pada tab kedua.
+      </p>
+      <img src="assets/images/salon.jpg" alt="salon" 
+           style="width: 50%; border-radius: 10px; display: block; margin: 0 auto;" />
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Daftar Layanan -->
+
+
+  <ion-card>
+  <ion-card-header>
+    <ion-card-title style="text-align: center; color: #e91e63;">
+      💖 Layanan Menail Salon 💖
+    </ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-accordion-group expand="inset">
+      <ion-accordion value="nail">
+        <ion-item slot="header" color="light">
+          <ion-label>💅 Nail Art</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          " Seni menghias kuku dengan detail dan kreatifitas". Nail Art adalah layanan kecantikan kuku yang menghadirkan desain unik dan penuh warna pada kuku anda. kami menggunakan cat kuku berkualitas tinggi dan teknik modern untuk membuat tangan anda tampak lebih menarik dan elegan. cock untuk acara spesial, liburan, atau sekedar memanjakan diri.
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="eyelash">
+        <ion-item slot="header" color="light">
+          <ion-label>👁️ Eyelash</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          "Eyelash (Eyelash Extention) Mata lebih tajam dan ekspresif dengan bulu mata lentik alami". Eyelash Single adalah metode untuk menambah panjang, volume dan lengkungan pada bulu mata asli anda. Menggunakan natural tanpa perlu maskara. wajah terlihat lebih hidup dan mempesona sepanjang hari. Cocok untuk anda yang aktif dan ingin tampilo memukau setiap saat.
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="volume">
+        <ion-item slot="header" color="light">
+          <ion-label>👁️‍🗨️ Eyelash Volume</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          "Eyelash Volume bulu mata ekstra tebal untuk tampilan glamor". Treatment ini memberikan efek dramatis dengan teknik volume lashes - banyak helai bulu mata ditanam ke satu helai asli, menjadikan lebih tebal dan mencolok. ideal untuk pesta, acara formal, atau anda yang suka tampilan bold. Tahan lama dan tetap nyaman dikenakan.
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="cut">
+        <ion-item slot="header" color="light">
+          <ion-label>✂️ Hair Cut</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          " Gaya rambut baru untuk tampilan lebih segar dan percaya diri". Layanan potong rambut kami dilakukan oleh hair stylist profesional yang siap membantu anda memilih model rambut sesuai bentuk wajah dan gaya personal. baik untuk potongan pendek, trim ujung rambut, atau perubahan total gaya. Dapatkan rambut sehat, rapi, dan mudah ditata.
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="spa">
+        <ion-item slot="header" color="light">
+          <ion-label>💆 Hair Spa</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          "Perawatan dan relaksasi untuk rambut dan kulit kepala". Hair Spa adalah kombinasi dari masker rambut, pijatan kepala, dan perawatan kulit kepala. atau rontok akibat perwarnaan dan polusi. selain menyuburkan rambut, hair spa juga membantu anda merasa lebih tenang dan rileks.
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="makeup">
+        <ion-item slot="header" color="light">
+          <ion-label>💄 Makeup</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          " Riasan profesional untuk semua momen istimewa". Layanan makeup kami mencakup riasan wajah natural hingga glam sesuai kebutuhan anda. cocok untuk wisuda, pesta, pre-wedding, atau acara penting lainnya. kami menggunakan produk makeup berkualitas dan teknik agar wajah anda terlihat flawless sepanjang hari.
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="cat">
+        <ion-item slot="header" color="light">
+          <ion-label>🎨 Cat Rambut</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          " Transformasi warna rambut untuk tampilan lebih stylish dan trendy". Dengan berbagai pilihan warna modern- dari coklat, natural, blonde, hingga warna-warna fasion anda- treatment ini cocok bagi anda yang ingin tampil beda. Proses dilakukan oelh stylist berpengalaman menggunakan pewarnaan rambut premium, sehingga hasilnya merata, tahan lama, dan tetap menjaga kesehatan rambbut anda.
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </ion-card-content>
+</ion-card>
+
+  <!-- Carousel Produk: 3 produk per slide -->
+  <h3 style="text-align: center; color: #e91e63; margin-top: 20px;">Paket Treatment Favorit</h3>
+  <ion-slides [options]="slideOpts" style="margin-top: 10px;">
+    <ion-slide *ngFor="let group of groupedProduk">
+      <div style="display: flex; justify-content: center; gap: 10px;">
+        <ion-card *ngFor="let item of group" style="width: 33.3%;">
+          <img [src]="item.gambar" alt="produk" 
+               style="width: 100%; height: 160px; object-fit: cover; border-radius: 10px;" />
+          <ion-card-header>
+            <ion-card-title style="color: #e91e63;">{{ item.nama }}</ion-card-title>
+            <ion-card-subtitle>Rp{{ item.harga }}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <!-- Promo -->
+  <ion-card color="light" style="margin-top: 20px;">
+    <ion-card-header>
+      <ion-card-title style="color: #e91e63;">Promo Spesial Juni 2025 Menail Salon!</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ul style="margin-left: 20px;">
+        <li>Birthday Treat: Diskon 20% semua treatment dengan minimal pembelanjaan Rp100.000</li>
+        <li>Promo Hand to Toe Deluxe Collagen Manicure/Pedicure hanya Rp199.000 termasuk gel polish</li>
+        <li>Promo Eyelash: Dari Rp400.000 menjadi Rp150.000 + Bundling Brow Lami dan Lash Lift dari Rp500.000 menjadi Rp350.000</li>
+        <li>Diskon 15% untuk semua treatment nail dengan minimal transaksi Rp200.000</li>
+      </ul>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Navigasi -->
+ <ion-button expand="full" (click)="goToTab2()" class="pink-button" style="margin-top: 20px;">
+  Isi Data Appointment Anda
+</ion-button>
+
+  <ion-button expand="full" (click)="goToTab4()" class="pink-button" style="margin-top: 20px;">
+  Lihat Data Appointment Anda
+</ion-button>

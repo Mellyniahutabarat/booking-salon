@@ -1,0 +1,25 @@
+.salon-image {
+  width: 50%;
+  max-width: 350px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+ion-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+ion-icon[name="star"] {
+  font-size: 18px;
+  margin-right: 2px;
+}
+.pink-button {
+  --background:rgb(247, 94, 170) !important;   // Pink cerah
+  --color: #000000 !important;        // Teks hitam
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

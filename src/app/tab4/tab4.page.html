@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar style="--background: #dd1177;">
+    <ion-title>Data Appoitment Costemer menail Salon</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content 
+      pullingIcon="arrow-dropdown" 
+      pullingText="Pull to refresh" 
+      refreshingSpinner="circles" 
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-card *ngFor="let appoitment of appoitment">
+    <ion-card-header>
+      <ion-card-subtitle>jeniskelamin: {{appoitment.jeniskelamin}}, treatment : {{appoitment.treatment}}, jumlahbookingan : {{appoitment.jumlahbookingan}}, waktu : {{appoitment.waktu}}, handleby : {{appoitment.handleby}}</ion-card-subtitle>
+      <ion-card-title>{{appoitment.nama}}, alamat: {{appoitment.alamat}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      No.Hp: {{appoitment.nohp}}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-infinite-scroll (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

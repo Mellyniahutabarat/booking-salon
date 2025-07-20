@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar style="--background: #dd1177;">
+    <ion-title style="color: white;">Model Layanan Salon</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Jika tidak memilih kategori -->
+  <ng-container *ngIf="!selectedKategori">
+    <ion-card color="light">
+      <ion-card-header>
+        <ion-card-title style="text-align: center; color: #e91e63;">💖 Kumpulan Model Layanan 💖</ion-card-title>
+      </ion-card-header>
+      <ion-card-content style="text-align: center;">
+        <p>Temukan inspirasi dari berbagai model layanan terbaik kami mulai dari Hair Cut, Eyelash, hingga Hair Spa dan Nail Art.</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" size-md="4" *ngFor="let item of layanan">
+          <ion-card button (click)="pilihKategori(item.kategori)" style="box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+            <img [src]="item.gambar" [alt]="item.nama"
+                 style="width: 100%; height: 160px; object-fit: cover; border-radius: 10px 10px 0 0;" />
+            <ion-card-header>
+              <ion-card-title style="color: #dd1177;">{{ item.nama }}</ion-card-title>
+              <ion-card-subtitle>{{ item.deskripsi }}</ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ng-container>
+
+  <!-- Jika sudah memilih kategori -->
+  <ng-container *ngIf="selectedKategori">
+    <ion-button expand="block" color="medium" (click)="kembali()">🔙 Kembali ke Kategori</ion-button>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" size-md="4" *ngFor="let gambar of modelGambar[selectedKategori]">
+          <ion-card>
+            <img [src]="gambar" alt="Model" style="width: 100%; height: 180px; object-fit: cover;" />
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ng-container>
+
+</ion-content>

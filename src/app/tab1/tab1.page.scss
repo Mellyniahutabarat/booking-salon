@@ -1,0 +1,25 @@
+.text-pink {
+  color: #e91e63;
+  font-weight: bold;
+}
+.pink-button {
+  --background:rgb(247, 94, 170) !important;   // Pink cerah
+  --color: #000000 !important;        // Teks hitam
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+ ion-slide img {
+  width:100%;
+  height: auto;
+  border-radius: 10px;
+ }
+
+ ion-slides {
+  height: auto;
+  width: 100%;
+}
+
+ion-slide {
+  display: flex;
+  justify-content: center;
+}

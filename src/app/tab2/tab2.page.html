@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-toolbar style="--background: #dd1177;">
+    <ion-title>Booking Treatment</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card class="welcome-card bg-content">
+    <ion-card-header>
+      <ion-card-title style="color:  #e91e63;">Appoitment Treatment</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Silakan Isikan Form dibawah Untuk Mendapatkan Layanan Treatment Menail Salon!.</p>
+
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">Nama lengkap</ion-label>
+          <ion-input type="text" [(ngModel)]="nama"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Nomor HP/WA</ion-label>
+          <ion-input type="text" [(ngModel)]="nohp"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Alamat</ion-label>
+          <ion-input type="text" [(ngModel)]="alamat"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Jenis kelamin</ion-label>
+          <ion-select [(ngModel)]="jeniskelamin" placeholder="Pilih">
+            <ion-select-option value="perempuan">Perempuan</ion-select-option>
+            <ion-select-option value="laki-laki">Laki-laki</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Jenis Treatment</ion-label>
+          <ion-select [(ngModel)]="treatment" placeholder="Pilih treatment">
+            <ion-select-option value="Gel polos">Gel polos</ion-select-option>
+            <ion-select-option value="Menicure basic">Menicure basic</ion-select-option>
+            <ion-select-option value="Pedicure basic">Pedicure basic</ion-select-option>
+            <ion-select-option value="Nail tip">Nail tip</ion-select-option>
+            <ion-select-option value="Cat eye">Cat eye</ion-select-option>
+            <ion-select-option value="Kallus">Kallus</ion-select-option>
+            <ion-select-option value="Eyelash singel">Eyelash single</ion-select-option>
+            <ion-select-option value="Eyelash volume">Eyelash volume</ion-select-option>
+            <ion-select-option value="Cuci blow premium">Cuci blow premium</ion-select-option>
+            <ion-select-option value="Cuci blow biasa">Cuci blow biasa</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Waktu</ion-label>
+          <ion-select [(ngModel)]="waktu" placeholder="Pilih waktu yang kamu inginkan">
+            <ion-select-option value="09:00">09:00</ion-select-option>
+            <ion-select-option value="11:00">11:00</ion-select-option>
+            <ion-select-option value="13:00">13:00</ion-select-option>
+            <ion-select-option value="15:00">15:00</ion-select-option>
+            <ion-select-option value="16:00">16:00</ion-select-option>
+            <ion-select-option value="17:00">17:00</ion-select-option>
+            <ion-select-option value="18:00">18:00</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Jumlah bookingan</ion-label>
+          <ion-select [(ngModel)]="jumlahbookingan" placeholder="Pilih berapa orang">
+            <ion-select-option value="1">1</ion-select-option>
+            <ion-select-option value="2">2</ion-select-option>
+            <ion-select-option value="3">3</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Handle by</ion-label>
+          <ion-select [(ngModel)]="handleby" placeholder="Pilih Nailist yang menangani">
+            <ion-select-option value="andayani">andayani</ion-select-option>
+            <ion-select-option value="mellynia">mellynia</ion-select-option>
+            <ion-select-option value="caca">caca</ion-select-option>
+            <ion-select-option value="eva">eva</ion-select-option>
+            <ion-select-option value="tio">tio</ion-select-option>
+            <ion-select-option value="devi">devi</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <div class="ion-padding">
+        <ion-button expand="block" class="pink-button" size="medium" (click)="addAppoitment()">
+          <ion-icon name="trending-up-outline"></ion-icon>
+          Daftar
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

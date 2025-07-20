@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar style="--background: #dd1177;">
+    <ion-title>Profile MeNail Salon</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+<ion-card>
+  <img [src]="salon.image" [alt]="salon.name" class="banner-image" />
+
+  <ion-card-header>
+    <ion-card-title>{{ salon.name }}</ion-card-title>
+    <ion-card-subtitle>{{ salon.subtitle }}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <p><strong>Alamat:</strong> {{ salon.address }}</p>
+    <p><strong>Jam Operasional:</strong> {{ salon.hours }}</p>
+    <p><strong>Kontak:</strong> <a [href]="salon.whatsappLink">{{ salon.phone }}</a></p>
+    <p><strong>Instagram:</strong> <a [href]="salon.instagramLink">{{ salon.instagram }}</a></p>
+    <p><strong>Deskripsi:</strong> {{ salon.description }}</p>
+  </ion-card-content>
+</ion-card>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Layanan Kami</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let layananItem of layanan">
+        <ion-icon [name]="layananItem.icon" slot="start"></ion-icon>
+        <ion-label>
+          <h2>{{ layananItem.nama }}</h2>
+          <p>{{ layananItem.deskripsi }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Testimoni Pelanggan</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let review of testimoni">
+        <ion-label>
+          <h3>{{ review.nama }}</h3>
+          <p>"{{ review.komentar }}"</p>
+          <ion-text color="warning">
+            <ng-container *ngFor="let bintang of [].constructor(review.rating)">
+              <ion-icon name="star"></ion-icon>
+            </ng-container>
+          </ion-text>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Tulis Testimoni Anda</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-label position="floating">Nama</ion-label>
+      <ion-input [(ngModel)]="nama" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Komentar</ion-label>
+      <ion-textarea [(ngModel)]="komentar" required></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Rating</ion-label>
+      <ion-select [(ngModel)]="rating">
+        <ion-select-option *ngFor="let r of [1, 2, 3, 4, 5]" [value]="r">{{ r }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button expand="block" (click)="submitTestimoni()" class="pink-button">Kirim</ion-button>
+  </ion-card-content>
+</ion-card>
